@@ -1128,9 +1128,10 @@ P5ZMQ3_zmq_poll( list, timeout = 0 )
                 }
             }
         }
-
+P5ZMQ3_TRACE("rv %d gimme_v %d g_scalar %d", rv, GIMME_V, G_SCALAR);
         if (GIMME_V == G_SCALAR) {
             mXPUSHi(rv);
+   	    mXPUSHi(0);
         }
         Safefree(pollitems);
         Safefree(callbacks);
